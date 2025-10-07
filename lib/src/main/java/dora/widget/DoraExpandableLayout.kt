@@ -11,6 +11,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.ColorInt
 import androidx.core.view.isVisible
 import dora.widget.expandablelayout.R
 
@@ -65,6 +66,21 @@ class DoraExpandableLayout @JvmOverloads constructor(
     fun setContent(view: View) {
         contentContainer.removeAllViews()
         contentContainer.addView(view)
+        contentContainer.visibility = if (isExpanded) View.VISIBLE else View.GONE
+    }
+
+    fun setContentText(text: CharSequence, @ColorInt textColor: Int, textSize: Float) {
+        contentContainer.removeAllViews()
+        val textView = TextView(context).apply {
+            this.text = text
+            this.setTextColor(textColor)
+            this.textSize = textSize
+            this.layoutParams = LayoutParams(
+                LayoutParams.MATCH_PARENT,
+                LayoutParams.WRAP_CONTENT
+            )
+        }
+        contentContainer.addView(textView)
         contentContainer.visibility = if (isExpanded) View.VISIBLE else View.GONE
     }
 
