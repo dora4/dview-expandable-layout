@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <declare-styleable name="DoraExpandableLayout">
+        <attr name="dview_el_titleText" format="string" />
+        <attr name="dview_el_startExpanded" format="boolean" />
+        <attr name="dview_el_animationDuration" format="integer" />
+        <attr name="dview_el_arrowDown" format="reference" />
+        <attr name="dview_el_arrowUp" format="reference" />
+    </declare-styleable>
+</resources>
