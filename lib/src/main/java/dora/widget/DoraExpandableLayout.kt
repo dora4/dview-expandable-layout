@@ -52,6 +52,12 @@ class DoraExpandableLayout @JvmOverloads constructor(
                 R.styleable.DoraExpandableLayout_dview_el_arrowUp,
                 R.drawable.dview_chevron_up
             )
+            if (a.hasValue(R.styleable.DoraExpandableLayout_dview_el_titleColor)) {
+                titleView.setTextColor(a.getColor(R.styleable.DoraExpandableLayout_dview_el_titleColor, 0xFF000000.toInt()))
+            }
+            if (a.hasValue(R.styleable.DoraExpandableLayout_dview_el_titleSize)) {
+                titleView.textSize = a.getDimension(R.styleable.DoraExpandableLayout_dview_el_titleSize, 16f)
+            }
             a.recycle()
         }
 
@@ -62,6 +68,14 @@ class DoraExpandableLayout @JvmOverloads constructor(
     }
 
     fun setTitle(text: CharSequence) { titleView.text = text }
+
+    fun setTitleColor(@ColorInt color: Int) {
+        titleView.setTextColor(color)
+    }
+
+    fun setTitleSize(sizeSp: Float) {
+        titleView.textSize = sizeSp
+    }
 
     fun setContent(view: View) {
         contentContainer.removeAllViews()

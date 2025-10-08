@@ -2,7 +2,9 @@
 
 <resources>
     <declare-styleable name="DoraExpandableLayout">
-        <attr name="dview_el_titleText" format="string" />
+        <attr name="dview_el_titleText" format="string|reference" />
+        <attr name="dview_el_titleColor" format="color|reference" />
+        <attr name="dview_el_titleSize" format="dimension|reference" />
         <attr name="dview_el_startExpanded" format="boolean" />
         <attr name="dview_el_animationDuration" format="integer" />
         <attr name="dview_el_arrowDown" format="reference" />
